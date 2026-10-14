@@ -25,7 +25,6 @@
 
 .search-results-children.is-rendered .search-result-file-matches .markdown-preview-section {
   max-width: 100%;
-  
 }
 
 .search-results-children.is-rendered .task-list-item-checkbox {
@@ -38,7 +37,6 @@
   margin-block-start: 0;
 }
 
-.search-results-children.is-rendered .search-result-file-matches .markdown-source-view {
-  height: 400px !important;
-  width: 100% !important;
+.cm-preview-code-block.is-rendered .markdown-preview-view {
+  height: inherit;
 }

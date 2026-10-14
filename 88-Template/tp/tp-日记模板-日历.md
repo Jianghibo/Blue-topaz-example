@@ -18,16 +18,16 @@ cssclass: mynote,noyaml
         <circle cx="376" cy="136" r="14"/>
         <circle cx="376" cy="94" r="14"/>
       </g>
-      <text id="month" x="32" y="150" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Noto Sans', 'Noto Sans CJK SC', 'Microsoft YaHei', 微软雅黑, sans-serif, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="122px" style="text-anchor: left">{{date:MMMM}}</text>
-      <text id="day" x="256" y="400" fill="#66757f" font-family="-apple-system, BlinkMacSystemFont, 'Noto Sans', 'Noto Sans CJK SC', 'Microsoft YaHei', 微软雅黑, sans-serif, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="256px" style="text-anchor: middle">{{date:DD}}</text>
+      <text id="month" x="32" y="150" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Noto Sans', 'Noto Sans CJK SC', 'Microsoft YaHei', 微软雅黑, sans-serif, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="122px" style="text-anchor: left"><% tp.date.now("MMMM") %></text>
+      <text id="day" x="256" y="400" fill="#66757f" font-family="-apple-system, BlinkMacSystemFont, 'Noto Sans', 'Noto Sans CJK SC', 'Microsoft YaHei', 微软雅黑, sans-serif, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="256px" style="text-anchor: middle"><% tp.date.now("DD") %></text>
       
-      <text id="weekday" x="256" y="480" fill="#66757f" font-family="-apple-system, BlinkMacSystemFont, 'Noto Sans', 'Noto Sans CJK SC', 'Microsoft YaHei', 微软雅黑, sans-serif, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="64px" style="text-anchor: middle">{{date:dddd}}</text>
+      <text id="weekday" x="256" y="480" fill="#66757f" font-family="-apple-system, BlinkMacSystemFont, 'Noto Sans', 'Noto Sans CJK SC', 'Microsoft YaHei', 微软雅黑, sans-serif, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="64px" style="text-anchor: middle"><% tp.date.now("dddd") %></text>
 </svg>
 ```
 > [!blank] 
-> [timeline{{date:DDD}}::timeline]
+> [timeline<% tp.date.now("DDD") %>::timeline]
 ```ad-flex
-(Weather::<% tp.user.getweather("") %>)
+(Weather::<% tp.user.getweather("杭州") %>)
 > [!infobox|noicon]- 🔖 当天创建的文件
 > ```dataviewjs 
 const filename=dv.current().file.name;

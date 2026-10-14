@@ -1,53 +1,66 @@
 async function getWeather(city){
-
+	if(!city) city = "杭州";
 	let key='dc0f31ac6f37484f88e3e7d45b84e403'; //尽量换成自己申请的key以免接口失效https://console.qweather.com
-	let locationId='';
-	let windydesc='';
-	if(city)
-	{
+	try {
 		let location = await searchCity(city,key);
-		locationId =  location.id;
-	}else
-	{
-		let location = await getpos(key);
-		locationId =  location.id;
-		city = location.name
-	}
-	console.log('city'+city+locationId)
-	let weather = await getQWeather(locationId,key);
-	console.log('weather'+weather)
-	if(weather=='-1')
-	{
-		return await getWWeather(city);
-	}else
-	{
-			let air = await getair(locationId,key);
-		let windyspeed =Math.max(weather[0].windSpeedDay,weather[0].windSpeedNight);
-		if(windyspeed<12)//小风
+		if(!location || location === -1 || !location.id) return await getWWeather(city);
+		let weather = await getQWeather(location.id,key);
+		if(weather=='-1' || !weather) return await getWWeather(city);
+		let air = await getair(location.id,key);
+		let windyspeed = Math.max(weather[0].windSpeedDay, weather[0].windSpeedNight);
+		let windydesc = '';
+		if(windyspeed<12)
 		{
 		 windydesc = "微风习习";
-		}else if(windyspeed<39)//小风
+		}else if(windyspeed<39)
 		{
 		 windydesc = "清风徐徐";	
 		}else 
-			windydesc = "有"+today.windDirDay+"风出没，风力"+today.windScaleDay+'级';	
+			windydesc = "有"+weather[0].windDirDay+"风出没，风力"+weather[0].windScaleDay+'级';	
 		let today = weather[0];
-			let desc = `${city} ${today.textDay}，${today.tempMin}~${today.tempMax}℃ ${air.category} ${windydesc}${today.moonPhase.replace(/[\u4e00-\u9fa5]/g,"")}`;
-			return desc;	
+		let airText = air && air.category ? air.category + " " : "";
+		let moon = today.moonPhase ? today.moonPhase.replace(/[\u4e00-\u9fa5]/g,"") : "";
+		return `${city} ${today.textDay}，${today.tempMin}~${today.tempMax}℃ ${airText}${windydesc}${moon}`;
+	} catch (error) {
+		return await getWWeather(city);
 	}
 }
 
-//wttr 天气入口
+function weatherText(code) {
+	const n = Number(code);
+	if (n === 113) return "晴";
+	if (n === 116) return "多云";
+	if (n === 119 || n === 122) return "阴";
+	if (n === 143 || n === 248 || n === 260) return "有雾";
+	if (n >= 200 && n < 230) return "雷雨";
+	if (n >= 263 && n < 320) return "有雨";
+	if (n >= 176) return "阵雨";
+	return "";
+}
+function weatherIcon(code) {
+	const n = Number(code);
+	if (n === 113) return "☀️";
+	if (n === 116) return "🌤️";
+	if (n === 119 || n === 122) return "☁️";
+	if (n >= 200 && n < 230) return "⛈️";
+	if (n >= 263 && n < 368) return "🌧️";
+	if (n >= 176) return "🌦️";
+	return "🌡️";
+}
+function windText(dir) {
+	const map = { N: "北", NE: "东北", E: "东", SE: "东南", S: "南", SW: "西南", W: "西", NW: "西北", NNE: "东北", ENE: "东北", ESE: "东南", SSE: "东南", SSW: "西南", WSW: "西南", WNW: "西北", NNW: "西北" };
+	return (map[dir] || "") + "风";
+}
+
+//wttr 天气入口。和风账号停用时用这一路，保证新建日记仍能写入天气。
 async function getWWeather(city)
  {
-	if(city=== undefined)
-	{
-		city='';
-	}
-  let result = await fetch("https://wttr.in/"+city+"?format=%l:+%c+%t+%w").then(async (res) => await res.text());
-	result = result.replace(/:/g,'').replace(/\+/g,'').replace(', China','');
- return result;
- 
+	if(!city) city = "杭州";
+	const res = await fetch("https://wttr.in/" + encodeURIComponent(city) + "?format=j1");
+	const data = await res.json();
+	const current = data.current_condition[0];
+	const today = data.weather[0];
+	return `${city} ${weatherIcon(current.weatherCode)}${weatherText(current.weatherCode)}，${today.mintempC}~${today.maxtempC}℃ ${windText(current.winddir16Point)} ${current.windspeedKmph}km/h`;
  }
 // 和风天气入口获取天气信息
 async function getQWeather(locationId,key){

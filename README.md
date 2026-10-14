@@ -60,7 +60,7 @@ https://github.com/cumany/Blue-topaz-examples/releases/
 [Rainbell129/Obsidian-Homepage: A dashboard for your obsidian vault. (github.com)](https://github.com/Rainbell129/Obsidian-Homepage)
 ## 🚩更新日志
 [[Changlog]]
-[Changlog.md (github.com)](https://github.com/cumany/Blue-topaz-examples/blob/main/Changlog.md)
+[90-示例/Changlog.md (github.com)](https://github.com/cumany/Blue-topaz-examples/blob/main/90-示例/Changlog.md)
 ## 效果图
 总览图
 ![image](https://user-images.githubusercontent.com/42957010/165482190-91dc0585-9e75-406c-a7a3-1121c1fc88f7.png)

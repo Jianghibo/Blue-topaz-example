@@ -145211,7 +145211,7 @@ class ReactComponentsPlugin extends obsidian.Plugin {
     }
     registerCodeBlockComponents(file, suppressComponentRefresh = false) {
         return __awaiter(this, void 0, void 0, function* () {
-            const content = yield this.app.vault.read(file);
+            const content = (yield this.app.vault.read(file)).replace(/\r\n/g, '\n');
             const nameSpace = this.getPropertyValue('react-components-namespace', file) || 'Global';
             const matches = this.getMatches(/^\s*?```jsx:component:(.*)\n((.|\n)*?)\n^\s*?```$/gm, content);
             for (const match of matches) {

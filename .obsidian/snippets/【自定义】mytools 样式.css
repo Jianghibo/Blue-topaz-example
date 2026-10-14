@@ -26,10 +26,16 @@
 display:none;
 }
  
-/*隐藏yaml区域*/
+/*隐藏yaml区域和笔记属性*/
 .markdown-preview-view.mytools  div>.language-yaml
 {	
   display: none;
+}
+.markdown-preview-view.mytools .metadata-container,
+.markdown-source-view.mytools .metadata-container,
+.view-content:has(.mytools) .metadata-container
+{
+  display: none !important;
 }
 
 /*隐藏行号*/

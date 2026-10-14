@@ -1809,37 +1809,6 @@
         "isFolder": true
       },
       {
-        "node": "98-字体--已安装过的文件夹可以直接删",
-        "children": [
-          {
-            "node": "JetBrainsMono-Regular.ttf",
-            "children": [],
-            "isFolder": false
-          },
-          {
-            "node": "LXGWWenKai-Light.ttf",
-            "children": [],
-            "isFolder": false
-          },
-          {
-            "node": "LXGWWenKai-Regular.ttf",
-            "children": [],
-            "isFolder": false
-          },
-          {
-            "node": "LXGWWenKaiScreenR.ttf",
-            "children": [],
-            "isFolder": false
-          },
-          {
-            "node": "说明.txt",
-            "children": [],
-            "isFolder": false
-          }
-        ],
-        "isFolder": true
-      },
-      {
         "node": "99-Attachment",
         "children": [
           {
@@ -2307,12 +2276,12 @@
         "isFolder": false
       },
       {
-        "node": "Changlog.md",
+        "node": "90-示例/Changlog.md",
         "children": [],
         "isFolder": false
       },
       {
-        "node": "Demo Note.md",
+        "node": "90-示例/Demo Note.md",
         "children": [],
         "isFolder": false
       },
@@ -2322,12 +2291,12 @@
         "isFolder": false
       },
       {
-        "node": "主题截图分享.md",
+        "node": "90-示例/主题截图分享.md",
         "children": [],
         "isFolder": false
       },
       {
-        "node": "从这开始.md",
+        "node": "90-示例/从这开始.md",
         "children": [],
         "isFolder": false
       },

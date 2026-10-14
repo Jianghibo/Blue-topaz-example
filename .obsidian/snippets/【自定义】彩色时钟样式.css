@@ -6,6 +6,7 @@ display: grid;
 justify-content: center;
 align-content: center;
 position: relative;
+isolation: isolate;
 text-align: center;
 height: 15em;
 }
@@ -123,4 +124,83 @@ opacity: 1;
   box-shadow: none;
   background-color:transparent;
   display: block;
+}
+
+/* 彩色时钟不显示笔记属性 */
+.markdown-preview-view.widgets .metadata-container,
+.markdown-source-view.widgets .metadata-container,
+.view-content:has(.widgets) .metadata-container {
+  display: none !important;
+}
+
+/* 天气卡片 */
+.markdown-preview-view.widgets span:has(> .sidebar-weather),
+.markdown-source-view.widgets span:has(> .sidebar-weather) {
+  display: block;
+  width: 100%;
+}
+
+.markdown-preview-view.widgets .markdown-preview-section > div {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sidebar-weather {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 2px 0 8px;
+  padding: 10px 10px 8px;
+  border-radius: 12px;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+.sidebar-weather--empty {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.sidebar-weather__now {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-weather__temp {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sidebar-weather__summary {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.sidebar-weather__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.sidebar-weather__days {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--background-modifier-border);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.sidebar-weather__day {
+  color: var(--text-muted);
 }

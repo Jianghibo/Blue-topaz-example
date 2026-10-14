@@ -11,7 +11,7 @@
         "format": "YYYY-MM-DD",
         "folder": "20-Diary",
         "openAtStartup": false,
-        "templatePath": "88-Template/tp-日记模板-日历.md"
+        "templatePath": "88-Template/tp/tp-日记模板-日历.md"
       },
       "week": {
         "enabled": true,
@@ -46,7 +46,7 @@
   "daily": {
     "format": "YYYY-MM-DD",
     "folder": "20-Diary",
-    "template": "88-Template/tp-日记模板-带进度",
+    "template": "88-Template/tp/tp-日记模板-日历.md",
     "enabled": true
   },
   "weekly": {

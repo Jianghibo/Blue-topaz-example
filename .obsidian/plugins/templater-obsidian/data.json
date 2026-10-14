@@ -15,6 +15,10 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
+      "folder": "20-Diary",
+      "template": "88-Template/tp/tp-日记模板-日历.md"
+    },
+    {
       "folder": "50-Inbox",
       "template": "88-Template/tp/tp-笔记收集箱.md"
     },
