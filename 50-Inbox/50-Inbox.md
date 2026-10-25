@@ -7,7 +7,8 @@ obsidianUIMode: preview
 %% Begin Waypoint %%
 - **[[50-Inbox]]**
 	- **Study**
-		- [[20221231235546]]
+		- **ELF基础**
+		- [[ELF文件]]
 	- **Website**
 		- [[表格转换-tableconvert]]
 		- [[历史上的今天]]
@@ -15,6 +16,5 @@ obsidianUIMode: preview
 		- [[文本处理-textce]]
 		- [[正则表达式验证]]
 		- [[carbon 代码高亮分享]]
-		- [[Cubox]]
 
 %% End Waypoint %%
