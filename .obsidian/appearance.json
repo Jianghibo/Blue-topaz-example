@@ -37,7 +37,8 @@
     "【列表】ob列表转换表格",
     "【分栏】Easy multi-column notes",
     "【callout】Custom page preview",
-    "【FONT】Consolas-Bookerly"
+    "【FONT】Consolas-Bookerly",
+    "【格式】编辑模式引用与缩进"
   ],
   "translucency": false,
   "textFontFamily": "Courier New",

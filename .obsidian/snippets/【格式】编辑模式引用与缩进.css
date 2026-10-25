@@ -1,0 +1,12 @@
+/* 段落首行缩进只留给普通段落。引用、列表和代码行再缩进 2em 时，编辑模式左侧会对不齐。 */
+body.text-indentation-two-em .markdown-source-view.mod-cm6 div.cm-line.HyperMD-quote,
+body.text-indentation-two-em .markdown-source-view.mod-cm6 div.cm-line.HyperMD-list-line,
+body.text-indentation-two-em .markdown-source-view.mod-cm6 div.cm-line[class*="HyperMD-codeblock"],
+body.text-indentation-two-em .markdown-source-view.mod-cm6 div.cm-line:has(.cm-indent) {
+  text-indent: 0;
+}
+
+/* 自定义列表符号把缩进伪元素宽度写成 0，编辑模式的层级缩进会消失。按制表符宽度补回。 */
+body:not(.default-list-marker) .markdown-source-view.mod-cm6 .cm-indent::before {
+  width: 4ch !important;
+}
