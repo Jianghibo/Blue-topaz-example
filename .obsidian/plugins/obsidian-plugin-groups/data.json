@@ -120,6 +120,14 @@
         {
           "id": "tab-switcher",
           "name": "Tab Switcher"
+        },
+        {
+          "id": "attachment-management",
+          "name": "Attachment Management"
+        },
+        {
+          "id": "obsidian-custom-attachment-location",
+          "name": "Custom Attachment Location"
         }
       ],
       "groupIds": [],

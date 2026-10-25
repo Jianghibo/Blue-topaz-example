@@ -11,7 +11,16 @@ obsidianUIMode: preview
 	- [[6X%6SQ(MQO9OWWRJRPQSO3B.png]]
 	- [[8P9UXT(}@5HDOD_R1DV3U[J.jpg]]
 	- [[11.excalidraw]]
+	- **50-Inbox**
+		- **Study**
+			- **ELF文件**
+				- [[IMG-20261025171251931.png]]
 	- [[59AD8BE5.png]]
+	- **99-Attachment**
+		- **99-Attachment**
+			- [[IMG-20261025170859669.png]]
+			- [[IMG-20261025171101046.png]]
+			- [[IMG-20261025171151073.png]]
 	- [[2022-06-09_234048.png]]
 	- [[2022-06-09_235013.png]]
 	- [[2022-06-09_235926.png]]
