@@ -1,5 +1,5 @@
 {
-  "baseFontSize": 14,
+  "baseFontSize": 16,
   "theme": "moonstone",
   "cssTheme": "Blue Topaz",
   "enabledCssSnippets": [
@@ -40,9 +40,9 @@
     "【FONT】Consolas-Bookerly"
   ],
   "translucency": false,
-  "textFontFamily": "",
-  "monospaceFontFamily": "",
-  "interfaceFontFamily": "",
+  "textFontFamily": "Courier New",
+  "monospaceFontFamily": "Courier New",
+  "interfaceFontFamily": "Courier New",
   "baseFontSizeAction": true,
   "accentColor": "",
   "nativeMenus": false,

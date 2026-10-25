@@ -1,6 +1,6 @@
 {
   "communityPluginSortOrder": "release",
-  "readableLineLength": true,
+  "readableLineLength": false,
   "foldHeading": true,
   "foldIndent": true,
   "alwaysUpdateLinks": true,
